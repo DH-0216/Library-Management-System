@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url("images/register.png") no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.form-box {
+    max-width: 700px;
+    padding: 28px;
+    margin: 0 28px;
+    overflow: hidden;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    backdrop-filter: blur(15px);
+    display: flex;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0);
+}
+
+h2 {
+    font-size: 2em;
+    color: #fff;
+    margin-bottom: 20px;
+    text-align: center;
+    padding-bottom: 35px;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.inputbox {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    position: relative;
+    text-align: left;
+    width: 48%;
+    color: #fff;
+    padding-bottom: 15px;
+}
+
+.inputbox:nth-child(2n) {
+    justify-content: end;
+}
+
+.inputbox label {
+    position: absolute;
+    top: 12px;
+    left: 0;
+    font-size: 14px;
+    color: #fff;
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+.inputbox input {
+    width: 100%;
+    padding: 10px 0;
+    border: none;
+    border-bottom: 2px solid #fff;
+    background: transparent;
+    outline: none;
+    font-size: 16px;
+    color: #fff;
+}
+
+.inputbox ion-icon {
+    cursor: pointer;
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-80%);
+
+
+}
+
+.inputbox input :is(:focus, :valid) {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0).2;
+}
+
+.inputbox input:focus~label,
+.inputbox input:valid~label {
+    top: -10px;
+    font-size: 12px;
+    color: #fff;
+}
+
+button {
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.birthday-input::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+
+}
+
+button:hover {
+    background-color: gainsboro;
+}
+
+.login {
+    font-size: .9em;
+    color: #fff;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+
+.login p a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 600;
+}
+
+.login p a:hover {
+    text-decoration: underline;
+}
+
+
+
+@media(max-width:600px) {
+    .form-box {
+        min-width: 280px;
+    }
+
+    .content {
+        max-height: 380px;
+        overflow: auto;
+    }
+
+    .inputbox {
+        margin-bottom: 12px;
+        width: 100%;
+    }
+
+    .inputbox:nth-child(2n) {
+        justify-content: space-between;
+    }
+
+    .content::-webkit-scrollbar {
+        width: 0;
+    }
+}

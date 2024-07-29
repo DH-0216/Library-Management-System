@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="register.css">
+    <title>Register</title>
+</head>
+
+<body>
+    <div class="form-box">
+        <form>
+            <h2>Register</h2>
+            <div class="content">
+
+                <div class="inputbox">
+                    <ion-icon name="person-outline"></ion-icon>
+                    <input type="text" required>
+                    <label for="fname">First Name</label>
+                </div>
+                <div class="inputbox">
+                    <ion-icon name="person-outline"></ion-icon>
+                    <input type="text" required>
+                    <label for="lname">Last Name</label>
+                </div>
+                <div class="inputbox">
+                    <ion-icon name="id-card-outline"></ion-icon>
+                    <input type="text" required>
+                    <label for="nicnumber">NIC Number</label>
+                </div>
+                <div class="inputbox">
+                    <ion-icon name="location-outline"></ion-icon>
+                    <input type="text" required>
+                    <label for="address">Address</label>
+                </div>
+                <div class="inputbox">
+                    <ion-icon name="mail-outline"></ion-icon>
+                    <input type="email" required>
+                    <label for="email">E-mail</label>
+                </div>
+                <div class="inputbox">
+                    <ion-icon name="call-outline"></ion-icon>
+                    <input type="tel"  required>
+                    <label for="Contact_number">Contact Number</label>
+                </div>
+                <div class="inputbox">
+                    <ion-icon name="eye-off-outline" onclick="togglePassword()" id="eyeicon"></ion-icon>
+                    <input type="password" id="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="inputbox">
+                    <ion-icon name="eye-off-outline" onclick="toggleConfirmPassword()" id="eyeicon2"></ion-icon>
+                    <input type="password" id="confirmpassword" required>
+                    <label>Confirm Password</label>
+                </div>
+                <div class="inputbox">
+                    <input type="text" name="birthday" onfocus="(this.type='date')" onblur="if(!this.value) this.type='text'" required class="birthday-input">
+                    <label for="birthday">Birthday</label>
+                </div>
+            </div>
+            <button type="submit">Register</button>
+            <div class="login">
+                <p>Already have a account <a href="login.html"> Login</a> </p>
+            </div>
+        </form>
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+<script>
+    let showPassword = false;
+
+    function togglePassword() {
+        const passwordInput = document.getElementById('password');
+        const eyeIcon = document.getElementById('eyeicon');
+
+        if (showPassword) {
+            passwordInput.type = 'password';
+            eyeIcon.setAttribute('name', 'eye-off-outline');
+        } else {
+            passwordInput.type = 'text';
+            eyeIcon.setAttribute('name', 'eye-outline');
+        }
+
+        showPassword = !showPassword;
+    }
+
+     function toggleConfirmPassword() {
+            const passwordInput = document.getElementById('confirmpassword');
+            const eyeIcon = document.getElementById('eyeicon2');
+
+            if (showPassword) {
+                passwordInput.type = 'password';
+                eyeIcon.setAttribute('name', 'eye-off-outline');
+            } else {
+                passwordInput.type = 'text';
+                eyeIcon.setAttribute('name', 'eye-outline');
+            }
+
+            showPassword = !showPassword;
+        }
+
+</script>
+</body>
+
+</html>
