@@ -10,52 +10,53 @@
 
 <body>
     <div class="form-box">
-        <form>
+        <form action="#" method="post">
             <h2>Register</h2>
             <div class="content">
                 <div class="inputbox">
                     <ion-icon name="person-outline"></ion-icon>
-                    <input type="text" id="fname" required>
-                    <label for="fname">First Name</label>
+                    <input type="text" id="first_name" name="first_name" required>
+                    <label for="first_name">First Name</label>
                 </div>
                 <div class="inputbox">
                     <ion-icon name="person-outline"></ion-icon>
-                    <input type="text" id="lname" required>
-                    <label for="lname">Last Name</label>
+                    <input type="text" id="last_name" name="last_name" required>
+                    <label for="last_name">Last Name</label>
                 </div>
                 <div class="inputbox">
                     <ion-icon name="id-card-outline"></ion-icon>
-                    <input type="text" id="nicnumber" required>
-                    <label for="nicnumber">NIC Number</label>
+                    <input type="text" id="nic_number" name="nic_number" required>
+                    <label for="nic_number">NIC Number</label>
                 </div>
                 <div class="inputbox">
                     <ion-icon name="location-outline"></ion-icon>
-                    <input type="text" id="address" required>
+                    <input type="text" id="address" name="address" required>
                     <label for="address">Address</label>
                 </div>
                 <div class="inputbox">
                     <ion-icon name="mail-outline"></ion-icon>
-                    <input type="email" id="email" required>
+                    <input type="email" id="email" name="email" required>
                     <label for="email">E-mail</label>
                 </div>
                 <div class="inputbox">
                     <ion-icon name="call-outline"></ion-icon>
-                    <input type="tel" id="Contact_number" required>
-                    <label for="Contact_number">Contact Number</label>
+                    <input type="tel" id="contact_number" name="contact_number" required>
+                    <label for="contact_number">Contact Number</label>
                 </div>
                 <div class="inputbox">
                     <ion-icon name="eye-off-outline" onclick="togglePassword()" id="eyeicon"></ion-icon>
-                    <input type="password" id="password" required>
+                    <input type="password" id="password" name="password" required>
                     <label for="password">Password</label>
                 </div>
                 <div class="inputbox">
                     <ion-icon name="eye-off-outline" onclick="toggleConfirmPassword()" id="eyeicon2"></ion-icon>
-                    <input type="password" id="confirmpassword" required>
+                    <input type="password" id="confirm_password" name="confirm_password" required>
                     <label for="confirmpassword">Confirm Password</label>
                 </div>
                 <div class="inputbox">
                     <input type="text" name="birthday" onfocus="(this.type='date')"
-                        onblur="if(!this.value) this.type='text'" class="birthday-input" id="birthday" required>
+                        onblur="if(!this.value) this.type='text'" class="birthday-input" id="birthday" name="birthday"
+                        required>
                     <label for="birthday">Birthday</label>
                 </div>
             </div>
@@ -88,7 +89,7 @@
         }
 
         function toggleConfirmPassword() {
-            const passwordInput = document.getElementById('confirmpassword');
+            const passwordInput = document.getElementById('confirm_password');
             const eyeIcon = document.getElementById('eyeicon2');
 
             if (showPassword) {
