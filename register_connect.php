@@ -10,10 +10,10 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
     $confirm_password = isset($_POST['confirm_password']) ? $_POST['confirm_password'] : null;
     $birthday = isset($_POST['birthday']) ? $_POST['birthday'] : null;
 
-    // output recived values
+    // output received values
     echo "first_name: " . htmlspecialchars($first_name) . "<br>";
     echo "last_name: " . htmlspecialchars($last_name) . "<br>";
-    echo "nic_numbe: " . htmlspecialchars($nic_numbef) . "<br>";
+    echo "nic_number: " . htmlspecialchars($nic_numbef) . "<br>";
     echo "address: " . htmlspecialchars($address) . "<br>";
     echo "email: " . htmlspecialchars($email) . "<br>";
     echo "contact_number: " . htmlspecialchars($contact_number) . "<br>";
