@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
     // output received values
     echo "first_name: " . htmlspecialchars($first_name) . "<br>";
     echo "last_name: " . htmlspecialchars($last_name) . "<br>";
-    echo "nic_number: " . htmlspecialchars($nic_numbef) . "<br>";
+    echo "nic_number: " . htmlspecialchars($nic_number) . "<br>";
     echo "address: " . htmlspecialchars($address) . "<br>";
     echo "email: " . htmlspecialchars($email) . "<br>";
     echo "contact_number: " . htmlspecialchars($contact_number) . "<br>";
@@ -33,9 +33,27 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
         $dbpassword = "";
         $dbname= "user_registration";
 
-        $conn = new
+        $conn = new mysqli($servername, $username, $password, $dbname);
+
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
     }
 
+    $stmt = $conn->prepare("INSERT INTO members(first_name, last_name, nic_number, address, email, contact_number, password, birthday) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("sssssiss", $first_name, $last_name, $nic_number, $address, $email, $contact_number, $password, $birthday);
+
+    if ($stmt->execute()) {
+        echo "Data add successfully!";
+    }else {
+        echo "Error: " . $stmt->error;
+    }
+
+    $stmt->close();
+    $conn->close();
+
+}else {
+    echo "Invalid request method.";
 }
 
+}
 ?>
