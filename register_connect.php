@@ -4,7 +4,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
     $last_name = filter_input(INPUT_POST, 'last_name', FILTER_SANITIZE_STRING);
     $nic_number= filter_input(INPUT_POST, 'nic_number', FILTER_SANITIZE_STRING);
     $address = filter_input(INPUT_POST, 'address', FILTER_SANITIZE_STRING);
-    $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIl);
+    $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
     $contact_number = filter_input(INPUT_POST, 'contact_number', FILTER_SANITIZE_STRING);
     $password = isset($_POST['password']) ? $_POST['password'] : null;
     $confirm_password = isset($_POST['confirm_password']) ? $_POST['confirm_password'] : null;
@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
         $dbpassword = "";
         $dbname= "user_registration";
 
-        $conn = new mysqli($servername, $username, $password, $dbname);
+        $conn = new mysqli($servername, $username, $dbpassword, $dbname);
 
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
@@ -52,8 +52,10 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
     $conn->close();
 
 }else {
-    echo "Invalid request method.";
+    echo "Invalid input.";
 }
 
+}else {
+    echo"Invalid request method.";
 }
 ?>
