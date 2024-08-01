@@ -10,23 +10,23 @@
 
 <body>
     <div class="form-box">
-        <form action="#" method="post">
+        <form action="process_form.php" method="post">
             <h2>Register</h2>
             <div class="content">
                 <div class="inputbox">
                     <ion-icon name="person-outline"></ion-icon>
-                    <input type="text" id="first_name" name="first_name" required>
-                    <label for="first_name">First Name</label>
+                    <input type="text" id="fname" name="fname" required>
+                    <label for="fname">First Name</label>
                 </div>
                 <div class="inputbox">
                     <ion-icon name="person-outline"></ion-icon>
-                    <input type="text" id="last_name" name="last_name" required>
-                    <label for="last_name">Last Name</label>
+                    <input type="text" id="lname" name="lname" required>
+                    <label for="lname">Last Name</label>
                 </div>
                 <div class="inputbox">
                     <ion-icon name="id-card-outline"></ion-icon>
-                    <input type="text" id="nic_number" name="nic_number" required>
-                    <label for="nic_number">NIC Number</label>
+                    <input type="text" id="nicnumber" name="nicnumber" required>
+                    <label for="nicnumber">NIC Number</label>
                 </div>
                 <div class="inputbox">
                     <ion-icon name="location-outline"></ion-icon>
@@ -40,8 +40,8 @@
                 </div>
                 <div class="inputbox">
                     <ion-icon name="call-outline"></ion-icon>
-                    <input type="tel" id="contact_number" name="contact_number" required>
-                    <label for="contact_number">Contact Number</label>
+                    <input type="tel" id="Contact_number" name="Contact_number" required>
+                    <label for="Contact_number">Contact Number</label>
                 </div>
                 <div class="inputbox">
                     <ion-icon name="eye-off-outline" onclick="togglePassword()" id="eyeicon"></ion-icon>
@@ -51,18 +51,18 @@
                 <div class="inputbox">
                     <ion-icon name="eye-off-outline" onclick="toggleConfirmPassword()" id="eyeicon2"></ion-icon>
                     <input type="password" id="confirm_password" name="confirm_password" required>
-                    <label for="confirmpassword">Confirm Password</label>
+                    <label for="confirm_password">Confirm Password</label>
                 </div>
+              
                 <div class="inputbox">
                     <input type="text" name="birthday" onfocus="(this.type='date')"
-                        onblur="if(!this.value) this.type='text'" class="birthday-input" id="birthday" name="birthday"
-                        required>
+                        onblur="if(!this.value) this.type='text'" class="birthday-input" id="birthday" required>
                     <label for="birthday">Birthday</label>
                 </div>
             </div>
             <button type="submit">Register</button>
             <div class="login">
-                <p>Already have a account <a href="login.html" target="_self"> Login</a> </p>
+                <p>Already have a account <a href="userlogin.html" target="_self"> Login</a> </p>
             </div>
         </form>
     </div>
