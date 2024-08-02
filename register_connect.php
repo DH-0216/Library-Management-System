@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
         $servername = "localhost";
         $username = "root";
         $dbpassword = "";
-        $dbname= "user_registration";
+        $dbname= "library";
 
         $conn = new mysqli($servername, $username, $dbpassword, $dbname);
 
