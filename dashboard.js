@@ -1,3 +1,18 @@
+//! sidebar 
+
+function openNav() {
+  document.getElementById("side-bar").style.width = "300px";
+  document.getElementById("main").style.marginLeft = "300px";
+}
+
+function closeNav() {
+  document.getElementById("side-bar").style.width = "0px";
+  document.getElementById("main").style.marginLeft = "0px";
+}
+
+
+
+
 //! Share button popup
 
 const sharebtns = document.querySelectorAll(".share-btn");
@@ -30,48 +45,16 @@ document.addEventListener("click", (event) => {
 
 //! Add Favorite
 
-let addfavourite = false;
+const icons = document.querySelectorAll(".like-btn");
 
-function addFavourite() {
-  const likeBtn = document.getElementById("like-btn");
-
-  if (addfavourite) {
-    likeBtn.setAttribute("name", "bookmark-outline");
-  } else {
-    likeBtn.setAttribute("name", "bookmark");
-  }
-  addfavourite = !addfavourite;
-}
-
-function addFavourite2() {
-  const likeBtn = document.getElementById("like-btn2");
-
-  if (addfavourite) {
-    likeBtn.setAttribute("name", "bookmark-outline");
-  } else {
-    likeBtn.setAttribute("name", "bookmark");
-  }
-  addfavourite = !addfavourite;
-}
-
-function addFavourite3() {
-  const likeBtn = document.getElementById("like-btn3");
-
-  if (addfavourite) {
-    likeBtn.setAttribute("name", "bookmark-outline");
-  } else {
-    likeBtn.setAttribute("name", "bookmark");
-  }
-  addfavourite = !addfavourite;
-}
-
-function addFavourite4() {
-  const likeBtn = document.getElementById("like-btn4");
-
-  if (addfavourite) {
-    likeBtn.setAttribute("name", "bookmark-outline");
-  } else {
-    likeBtn.setAttribute("name", "bookmark");
-  }
-  addfavourite = !addfavourite;
-}
+icons.forEach((icon) => {
+  icon.addEventListener("click", function () {
+    if (this.getAttribute("name") === "bookmark-outline") {
+      this.setAttribute("name", "bookmark");
+      this.classList.add("bounce-in");
+    } else {
+      this.setAttribute("name", "bookmark-outline");
+      this.classList.remove("bounce-in");
+    }
+  });
+});
