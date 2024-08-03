@@ -49,12 +49,12 @@ const icons = document.querySelectorAll(".like-btn");
 
 icons.forEach((icon) => {
   icon.addEventListener("click", function () {
-    if (this.getAttribute("name") === "bookmark-outline") {
-      this.setAttribute("name", "bookmark");
-      this.classList.add("bounce-in");
+    if (icon.getAttribute("name") === "bookmark-outline") {
+      icon.setAttribute("name", "bookmark");
+      icon.classList.add("bounce-in");
     } else {
-      this.setAttribute("name", "bookmark-outline");
-      this.classList.remove("bounce-in");
+      icon.setAttribute("name", "bookmark-outline");
+      icon.classList.remove("bounce-in");
     }
   });
 });
