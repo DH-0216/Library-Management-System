@@ -69,14 +69,12 @@ li {
   gap: 5px;
 }
 
-
-#sidebar.hide .user-info-wrapper img{
+#sidebar.hide .user-info-wrapper img {
   height: 100px;
   width: 100px;
-  
 }
-#sidebar.hide .user-info-wrapper p{
-font-size: 0px;
+#sidebar.hide .user-info-wrapper p {
+  font-size: 0px;
 }
 
 #sidebar .user-info img {
@@ -86,7 +84,6 @@ font-size: 0px;
   border-radius: 50%;
   padding: 20px;
 }
-
 
 #sidebar .user-info p {
   color: #818181;
@@ -123,8 +120,6 @@ font-size: 0px;
 #sidebar.hide:hover .side-menu {
   padding: 0 20px;
 }
-
-
 
 #sidebar .side-menu a {
   display: flex;
@@ -343,13 +338,13 @@ main .breadcrumbs li a {
   font-size: 14px;
 }
 
-main .breadcrumbs li a {
-  color: var(--blue);
-}
-
-main .breadcrumbs li a.active,
+main .breadcrumbs li a,
 main .breadcrumbs li.divider {
   color: var(--dark-grey);
+}
+
+main .breadcrumbs li a.active {
+  color: var(--blue);
   pointer-events: none;
 }
 
