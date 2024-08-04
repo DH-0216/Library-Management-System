@@ -88,7 +88,7 @@ sidebar.addEventListener("mouseenter", function () {
 
 // PROFILE DROPDOWN
 const profile = document.querySelector("nav .profile");
-const imgProfile = profile.querySelector("img");
+const imgProfile = profile.querySelector(".name");
 const dropdownProfile = profile.querySelector(".profile-link");
 
 imgProfile.addEventListener("click", function () {

@@ -291,7 +291,7 @@ nav .profile img {
   cursor: pointer;
 }
 
-nav .profile .name {
+nav .profile .name-role {
   display: inline-block;
   color: var(--dark);
 }
