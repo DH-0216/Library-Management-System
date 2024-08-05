@@ -134,8 +134,12 @@ li {
 }
 
 #sidebar .side-menu > li > a:hover,
-#sidebar .side-menu .divider-content > li > a:hover {
+#sidebar .side-menu .divider-content .setting > a:hover {
   background: var(--blue);
+  color: var(--light);
+}
+#sidebar .side-menu .divider-content .logout > a:hover {
+  background: red;
   color: var(--light);
 }
 #sidebar .side-menu > li > a.active .icon-right {
@@ -330,6 +334,9 @@ nav .profile .profile-link a {
 
 nav .profile .profile-link a:hover {
   background: var(--grey);
+}
+nav .profile .profile-link .logout a:hover{
+  color: red;
 }
 
 main {
