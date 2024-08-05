@@ -126,19 +126,18 @@ li {
   align-items: center;
   font-size: 16px;
   color: var(--dark);
-  padding: 12px 16px 12px 0;
+  padding: 18px 16px 12px 0;
   transition: all 0.3s ease;
   border-radius: 10px;
   margin: 4px 0;
   white-space: nowrap;
 }
 
-#sidebar .side-menu > li > a:hover,
-#sidebar .side-menu .divider-content .setting > a:hover {
+#sidebar .side-menu > li > a:hover {
   background: var(--blue);
   color: var(--light);
 }
-#sidebar .side-menu .divider-content .logout > a:hover {
+#sidebar .side-menu .logout > a:hover {
   background: red;
   color: var(--light);
 }
@@ -153,7 +152,7 @@ li {
 }
 
 #sidebar .divider {
-  margin-top: 60px;
+  margin-top: 70px;
   font-size: 12px;
   text-transform: uppercase;
   font-weight: 700;
