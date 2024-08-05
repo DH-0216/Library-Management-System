@@ -133,8 +133,10 @@ li {
   white-space: nowrap;
 }
 
-#sidebar .side-menu > li > a:hover {
-  background: var(--grey);
+#sidebar .side-menu > li > a:hover,
+#sidebar .side-menu .divider-content > li > a:hover {
+  background: var(--blue);
+  color: var(--light);
 }
 #sidebar .side-menu > li > a.active .icon-right {
   transform: rotateZ(90deg);
