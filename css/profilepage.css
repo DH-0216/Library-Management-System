@@ -165,13 +165,6 @@ li {
   text-align: center;
 }
 
-
-
-
-
-
-
-
 main {
   margin-left: 350px;
   padding: 20px;
@@ -205,12 +198,9 @@ header {
   font-weight: bold;
 }
 
-.account-edit {
-  margin-bottom: 10px;
-}
 
-.input-container {
-  margin-bottom: 10px;
+.account-edit .input-container {
+  margin-bottom: 25px;
 }
 
 .input-container label {
@@ -330,4 +320,7 @@ textarea {
 #notiffication-section .card-body .form-group{
 margin: 30px;
 padding-left: 30px;
+}
+#notiffication-section .card-body .form-group .switcher-label{
+  padding-left: 10px;
 }

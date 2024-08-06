@@ -1,3 +1,14 @@
+<?php
+
+session_start();
+
+if (!isset($_SESSION['email'], $_SESSION['user_nic'])) {
+    echo "<script>alert('Login Error')</script>";
+    header("Location: ../userlogin.html");
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +16,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="CSS/dashboard.css">
+    <link rel="stylesheet" href="../CSS/dashboard.css">
     <title>Dashboard</title>
 </head>
 
@@ -14,9 +25,9 @@
     <section id="sidebar">
         <div class="user-info">
             <div class="user-info-wrapper">
-                <a href="#"><img src="img/user.png" alt="user" /></a>
+                <a href="#"><img src="../img/user.png" alt="user" /></a>
                 <a href="#">
-                    <p>User Name</p>
+                    <p><?php echo htmlspecialchars($_SESSION['first_name']) . " " . htmlspecialchars($_SESSION['last_name']); ?></p>
                 </a>
             </div>
         </div>
@@ -38,7 +49,7 @@
             <li><a href="#"><i class='bx bxs-bookmarks icon'></i>Bookmarks</a></li>
             <div class="divider"></div>
             <li> <a href="#"><i class='bx bxs-cog icon'></i>Setting</a></li>
-            <li class="logout"> <a href="#"><i class='bx bxs-log-out icon'></i>Logout</a></li>
+            <li class="logout"> <a href="?action=runFunction"><i class='bx bxs-log-out icon'></i>Logout</a></li>
 
         </ul>
     </section>
@@ -62,16 +73,16 @@
             </a>
             <span class="divider"></span>
             <div class="profile">
-                <a href="#"><img src="img/user.png" alt="User">
+                <a href="#"><img src="../img/user.png" alt="User">
                     <a href="#">
                         <div class="name-role">
-                            <h4 class="name">User Name</h4>
+                            <h4 class="name"><?php echo htmlspecialchars($_SESSION['first_name']) . " " . htmlspecialchars($_SESSION['last_name']); ?></h4>
                             <small class="role">member</small>
                         </div>
                     </a>
                     <ul class="profile-link">
-                        <li><a href="#"><i class='bx bxs-user-circle icon' type='solid'></i>Profile</a></li>
-                        <li class="logout"><a href="#"><i class='bx bxs-user-circle icon' type='solid'></i>Logout</a>
+                        <li><a href="../profilepage.html"><i class='bx bxs-user-circle icon' type='solid'></i>Profile</a></li>
+                        <li class="logout"><a href="?action=runFunction"><i class='bx bxs-user-circle icon' type='solid'></i>Logout</a>
                         </li>
                     </ul>
 
@@ -90,7 +101,7 @@
                 <div class="card">
                     <div class="card-single">
                         <div class="card-header">
-                            <img src="img/Game of thrones.jpg" alt="Game of thrones">
+                            <img src="../img/Game of thrones.jpg" alt="Game of thrones">
                             <p>Simple Test</p>
                             <i class='bx bx-bookmark like-btn'></i>
                         </div>
@@ -124,7 +135,7 @@
 
                     <div class="card-single">
                         <div class="card-header">
-                            <img src="img/Lord of the Rings.jpeg " alt="Lord of the Rings">
+                            <img src="../img/Lord of the Rings.jpeg " alt="Lord of the Rings">
                             <p>Simple Test</p>
                             <i class='bx bx-bookmark like-btn'></i>
                         </div>
@@ -159,7 +170,7 @@
 
                     <div class="card-single">
                         <div class="card-header">
-                            <img src="img/Harry Potter.jpeg" alt="Harry Potter">
+                            <img src="../img/Harry Potter.jpeg" alt="Harry Potter">
                             <p>Simple Test</p>
                             <i class='bx bx-bookmark like-btn'></i>
                         </div>
@@ -195,7 +206,7 @@
 
                     <div class="card-single">
                         <div class="card-header">
-                            <img src="img/ONYX STORM.jpg" alt="ONYX STORM">
+                            <img src="../img/ONYX STORM.jpg" alt="ONYX STORM">
                             <p>Simple Test</p>
                             <i class='bx bx-bookmark like-btn'></i>
                         </div>
@@ -230,7 +241,7 @@
 
                     <div class="card-single">
                         <div class="card-header">
-                            <img src="img/The Games God Plays.webp" alt="The Games God Plays">
+                            <img src="../img/The Games God Plays.webp" alt="The Games God Plays">
                             <p>Simple Test</p>
                             <i class='bx bx-bookmark like-btn'></i>
                         </div>
@@ -263,7 +274,7 @@
 
                     <div class="card-single">
                         <div class="card-header">
-                            <img src="img/Don Quixote.jpeg" alt="Don Quixote">
+                            <img src="../img/Don Quixote.jpeg" alt="Don Quixote">
                             <p>Simple Test</p>
                             <i class='bx bx-bookmark like-btn'></i>
                         </div>
@@ -318,7 +329,7 @@
                     <div class="chat-box">
                         <p class="day"><span>Today</span></p>
                         <div class="msg">
-                            <img src="img/admin.svg.png" alt="admin">
+                            <img src="../img/admin.svg.png" alt="admin">
                             <div class="chat">
                                 <div class="profile">
                                     <span class="username">User</span>
@@ -349,7 +360,33 @@
     </section>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="JS/dashboard.js"></script>
+    <script src="../JS/dashboard.js"></script>
 </body>
+
+<?php
+
+if (isset($_GET['action']) && $_GET['action'] == 'runFunction') {
+    unset($_SESSION['user_nic']);
+    unset($_SESSION['last_name']);
+    unset($_SESSION['first_name']);
+
+    logout();
+}
+
+function logout(){
+    echo "
+    <script>
+    
+    alert('Logging out..')
+
+    window.location.href = '../userlogin.html';
+    </script>
+
+    ";
+
+}
+
+
+?>
 
 </html>
