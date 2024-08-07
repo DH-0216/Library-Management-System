@@ -30,31 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
   switchSections("Account");
 });
 
-//! passqord handle
-
-function handlePasswordUpdate(event) {
-  event.preventDefault();
-  const oldPassword = document.querySelector(
-    'input[placeholder="Old Password"]'
-  ).value;
-  const newPassword = document.querySelector(
-    'input[placeholder="New Password"]'
-  ).value;
-  const confirmNewPassword = document.querySelector(
-    'input[placeholder="Confirm New Password"]'
-  ).value;
-
-  if (newPassword !== confirmNewPassword) {
-    alert("New passwords do not match.");
-    return;
-  }
-
-  alert("Password updated successfully!");
-}
-
-document
-  .querySelector(".password-section form")
-  .addEventListener("submit", handlePasswordUpdate);
 
 //! Logout Confirm
 
