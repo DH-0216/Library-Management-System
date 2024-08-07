@@ -87,7 +87,7 @@ if (isset($_GET['logout'])) {
                         <div class="account-edit">
                             <div class="input-container">
                                 <label>First Name</label>
-                                <input type="text" name="first_name placeholder="First Name" value="<?php echo $firstname; ?>" />
+                                <input type="text" name="first_name" placeholder="First Name" value="<?php echo $firstname; ?>" />
                             </div>
                             <div class="input-container">
                                 <label>Last Name</label>
