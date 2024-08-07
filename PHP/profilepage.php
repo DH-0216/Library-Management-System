@@ -78,71 +78,72 @@ if (isset($_GET['logout'])) {
 
     <main>
         <div id="main" class="main-content">
-            <span style="font-size:30px;cursor:pointer" onclick="openNav()"></span>
             <header>
                 <section class="generel-section">
-                    <form>
+                    <form action="update.php" method="post">
                         <div class="account-header">
                             <h1 class="account-title">General</h1>
                         </div>
                         <div class="account-edit">
                             <div class="input-container">
                                 <label>First Name</label>
-                                <input type="text" placeholder="First Name" value="<?php echo $firstname; ?>" />
+                                <input type="text" name="firs_tname placeholder="First Name" value="<?php echo $firstname; ?>" />
                             </div>
                             <div class="input-container">
                                 <label>Last Name</label>
-                                <input type="text" placeholder="Last Name" value="<?php echo $lastname; ?>" />
+                                <input type="text" name="last_name" placeholder="Last Name" value="<?php echo $lastname; ?>" />
                             </div>
 
                             <div class="input-container">
                                 <label>Email</label>
-                                <input type="email" placeholder="Email" value="<?php echo $email; ?>" />
+                                <input type="email" name="email" placeholder="Email" value="<?php echo $email; ?>" />
                             </div>
                             <div class="input-container">
                                 <label>Phone Number</label>
-                                <input type="text" placeholder="Phone Number" value="<?php echo $contact; ?>" />
+                                <input type="text" name="contact"  placeholder="Phone Number" value="<?php echo $contact; ?>" />
                             </div>
 
                             <div class="input-container">
                                 <label class="form-label">Birthday</label>
-                                <input type="text" value="<?php echo $birthday; ?>">
+                                <input type="text" name="birthday" value="<?php echo $birthday; ?>">
                             </div>
 
 
 
                             <div class="input-container">
                                 <label>Address</label>
-                                <input type="text" placeholder="Address" value="<?php echo $address ?>">
+                                <input type="text" name="address" placeholder="Address" value="<?php echo $address ?>">
                             </div>
                         </div>
 
                         <div class="btn-constrainer">
-                            <button class="btn-cancel"><a href="dashboard.php">Cancel</a></button>
-                            <button class="btn-update">Update</button>
+                            <button type="button" class="btn-cancel"><a href="dashboard.php">Cancel</a></button>
+                            <button type="submit" class="btn-update">Update</button>
                         </div>
                     </form>
                 </section>
+
+
                 <section id="password-section" class="password-section" style="display: none;">
-                    <form>
+                    <form action="updatepassword.php" method="post">
                         <h2 class="mb-4">Password Settings</h2>
                         <div class="account-edit">
                             <div class="input-container">
                                 <label>Old Password</label>
-                                <input type="password" placeholder="Old Password" />
+                                <input type="password" name="current_password" placeholder="Current Password" />
                             </div>
                             <div class="input-container">
                                 <label>New Password</label>
-                                <input type="password" placeholder="New Password" />
+                                <input type="password" name="new_password" placeholder="New Password" />
                             </div>
                             <div class="input-container">
                                 <label>Confirm New Password</label>
-                                <input type="password" placeholder="Confirm New Password" />
+                                <input type="password" name="confirm_password" placeholder="Confirm New Password" />
                             </div>
                         </div>
                         <div class="btn-constrainer">
-                            <button class="btn-cancel"><a href="dashboard.php">Cancel</a></button>
-                            <button class="btn-update">Update</button>
+                            <button type="button" class="btn-cancel"><a href="dashboard.php">Cancel</a></button>
+                            <button type="submit" class="btn-update">Update</button>
                         </div>
                         <div class="extra-info">
                             <p>If you forgot your password, <a href="#">click here</a> to reset it.</p>
