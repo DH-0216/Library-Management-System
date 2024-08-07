@@ -64,7 +64,7 @@ if ($result_users->num_rows > 0) {
             <li><a href="#" class="menu-link"><i class="bx bxs-bell icon"></i>Notifications</a></li>
             <div class="divider"></div>
             <li><a href="#" class="menu-link"><i class="bx bxs-cog icon"></i> Settings</a></li>
-            <li class="logout"><a href="?action=runFunction" class="menu-link"><i class="bx bxs-log-out icon"></i>
+            <li class="logout"><a href="?action=runFunction" onclick="return confirmLogout();"><i class="bx bxs-log-out icon"></i>
                     Logout</a></li>
         </ul>
     </section>
@@ -111,7 +111,7 @@ if ($result_users->num_rows > 0) {
                         </div>
 
                         <div class="btn-constrainer">
-                            <button class="btn-cancel">Cancel</button>
+                            <button class="btn-cancel"><a href="dashboard.php">Cancel</a></button>
                             <button class="btn-update">Update</button>
                         </div>
                     </form>
@@ -134,7 +134,7 @@ if ($result_users->num_rows > 0) {
                             </div>
                         </div>
                         <div class="btn-constrainer">
-                            <button class="btn-cancel">Cancel</button>
+                            <button class="btn-cancel"><a href="dashboard.php">Cancel</a></button>
                             <button class="btn-update">Update</button>
                         </div>
                         <div class="extra-info">
@@ -211,7 +211,7 @@ if ($result_users->num_rows > 0) {
                                 </label>
                             </div>
                             <div class="btn-constrainer">
-                                <button class="btn-cancel">Cancel</button>
+                                <button class="btn-cancel"><a href="dashboard.php">Cancel</a></button>
                                 <button class="btn-update">Update</button>
                             </div>
                         </div>
@@ -225,30 +225,5 @@ if ($result_users->num_rows > 0) {
     <script src="../JS/profilepage.js"></script>
 
 </body>
-
-<?php
-
-if (isset($_GET['action']) && $_GET['action'] == 'runFunction') {
-    unset($_SESSION['user_nic']);
-    unset($_SESSION['last_name']);
-    unset($_SESSION['first_name']);
-
-    logout();
-}
-
-function logout()
-{
-    echo "
-    <script>
-    
-    alert('Logging out..')
-
-    window.location.href = '../userlogin.html';
-    </script>
-
-    ";
-}
-
-?>
 
 </html>

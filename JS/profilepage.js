@@ -14,17 +14,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function switchSections(target) {
     if (target === "Account") {
-        accountSection.style.display = "block";
-        passwordSection.style.display = "none";
-        notificationSection.style.display = "none";
+      accountSection.style.display = "block";
+      passwordSection.style.display = "none";
+      notificationSection.style.display = "none";
     } else if (target === "Password") {
       accountSection.style.display = "none";
-        passwordSection.style.display = "block";
-        notificationSection.style.display = "none";
+      passwordSection.style.display = "block";
+      notificationSection.style.display = "none";
     } else if (target === "Notifications") {
-        accountSection.style.display = "none";
-        passwordSection.style.display = "none";
-        notificationSection.style.display = "block";
+      accountSection.style.display = "none";
+      passwordSection.style.display = "none";
+      notificationSection.style.display = "block";
     }
   }
   switchSections("Account");
@@ -55,3 +55,9 @@ function handlePasswordUpdate(event) {
 document
   .querySelector(".password-section form")
   .addEventListener("submit", handlePasswordUpdate);
+
+//! Logout Confirm
+
+function confirmLogout() {
+  return confirm("Are you sure want to log out?");
+}
