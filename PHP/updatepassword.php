@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $stmt->fetch();
             $stmt->close();
 
-            if ($currentPasswordc === $storedPassword) {
+            if ($currentPassword === $storedPassword) {
                 $stmt = $conn->prepare("UPDATE members SET password = ? WHERE nic_number = ?");
                 if ($stmt === false) {
                     die('Prepare failed: ' . htmlspecialchars($conn->error));
