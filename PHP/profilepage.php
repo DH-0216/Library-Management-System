@@ -31,13 +31,7 @@ if ($result_users->num_rows > 0) {
     echo "No data";
 }
 
-
-
 ?>
-
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -57,7 +51,8 @@ if ($result_users->num_rows > 0) {
             <div class="user-info-wrapper">
                 <a href="#"><img src="../img/user.png" alt="user" /></a>
                 <a href="#">
-                    <p>User Name</p>
+                    <p><?php echo htmlspecialchars($_SESSION['first_name']) . " " . htmlspecialchars($_SESSION['last_name']); ?>
+                    </p>
                 </a>
             </div>
         </div>
@@ -69,7 +64,8 @@ if ($result_users->num_rows > 0) {
             <li><a href="#" class="menu-link"><i class="bx bxs-bell icon"></i>Notifications</a></li>
             <div class="divider"></div>
             <li><a href="#" class="menu-link"><i class="bx bxs-cog icon"></i> Settings</a></li>
-            <li class="logout"><a href="?action=runFunction" class="menu-link"><i class="bx bxs-log-out icon"></i> Logout</a></li>
+            <li class="logout"><a href="?action=runFunction" class="menu-link"><i class="bx bxs-log-out icon"></i>
+                    Logout</a></li>
         </ul>
     </section>
 
@@ -110,7 +106,7 @@ if ($result_users->num_rows > 0) {
 
                             <div class="input-container">
                                 <label>Address</label>
-                                <textarea placeholder="Address" value="<?php echo $address ?>"></textarea>
+                                <input type="text" placeholder="Address" value="<?php echo $address ?>">
                             </div>
                         </div>
 
@@ -232,7 +228,16 @@ if ($result_users->num_rows > 0) {
 
 <?php
 
-function logout(){
+if (isset($_GET['action']) && $_GET['action'] == 'runFunction') {
+    unset($_SESSION['user_nic']);
+    unset($_SESSION['last_name']);
+    unset($_SESSION['first_name']);
+
+    logout();
+}
+
+function logout()
+{
     echo "
     <script>
     
@@ -242,9 +247,7 @@ function logout(){
     </script>
 
     ";
-
 }
-
 
 ?>
 
