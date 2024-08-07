@@ -87,7 +87,7 @@ if (isset($_GET['logout'])) {
                         <div class="account-edit">
                             <div class="input-container">
                                 <label>First Name</label>
-                                <input type="text" name="first_tname placeholder="First Name" value="<?php echo $firstname; ?>" />
+                                <input type="text" name="first_name placeholder="First Name" value="<?php echo $firstname; ?>" />
                             </div>
                             <div class="input-container">
                                 <label>Last Name</label>
@@ -129,7 +129,7 @@ if (isset($_GET['logout'])) {
                         <h2 class="mb-4">Password Settings</h2>
                         <div class="account-edit">
                             <div class="input-container">
-                                <label>Old Password</label>
+                                <label>Current Password</label>
                                 <input type="password" name="current_password" placeholder="Current Password" />
                             </div>
                             <div class="input-container">
