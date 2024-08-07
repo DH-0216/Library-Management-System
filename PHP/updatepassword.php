@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </script>";
         } else {
             $nicNumber = $_SESSION['user_nic'];
-            $stmt = $conn->prepare("SELECT password FROM members WHERE nic_number + ?");
+            $stmt = $conn->prepare("SELECT password FROM members WHERE nic_number = ?");
             if ($stmt === false) {
                 die('Prepare failed: ' . htmlspecialchars($conn->error));
             }
