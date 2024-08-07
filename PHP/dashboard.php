@@ -81,7 +81,7 @@ if (!isset($_SESSION['email'], $_SESSION['user_nic'])) {
                         </div>
                     </a>
                     <ul class="profile-link">
-                        <li><a href="../profilepage.html"><i class='bx bxs-user-circle icon' type='solid'></i>Profile</a></li>
+                        <li><a href="profilepage.php"><i class='bx bxs-user-circle icon' type='solid'></i>Profile</a></li>
                         <li class="logout"><a href="?action=runFunction"><i class='bx bxs-user-circle icon' type='solid'></i>Logout</a>
                         </li>
                     </ul>
