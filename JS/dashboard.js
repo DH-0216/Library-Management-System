@@ -1,4 +1,4 @@
-// SIDEBAR DROPDOWN
+//! SIDEBAR DROPDOWN
 const allDropdown = document.querySelectorAll("#sidebar .side-dropdown");
 const sidebar = document.getElementById("sidebar");
 
@@ -21,7 +21,7 @@ allDropdown.forEach((item) => {
   });
 });
 
-// SIDEBAR COLLAPSE
+//! SIDEBAR COLLAPSE
 const toggleSidebar = document.querySelector("nav .toggle-sidebar");
 const allSideDivider = document.querySelectorAll("#sidebar .divider");
 
@@ -86,7 +86,7 @@ sidebar.addEventListener("mouseenter", function () {
   }
 });
 
-// PROFILE DROPDOWN
+//! PROFILE DROPDOWN
 const profile = document.querySelector("nav .profile");
 const imgProfile = profile.querySelector(".name");
 const dropdownProfile = profile.querySelector(".profile-link");
@@ -95,7 +95,7 @@ imgProfile.addEventListener("click", function () {
   dropdownProfile.classList.toggle("show");
 });
 
-// MENU
+//! MENU
 const allMenu = document.querySelectorAll("main .content-data .head .menu");
 
 allMenu.forEach((item) => {
@@ -179,3 +179,9 @@ likeBtns.forEach((likeBtn) => {
     }
   });
 });
+
+
+//! Logout Confirm
+function confirmLogout() {
+  return confirm("Are you sure want to log out?"); 
+}

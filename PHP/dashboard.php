@@ -6,6 +6,13 @@ if (!isset($_SESSION['email'], $_SESSION['user_nic'])) {
     echo "<script>alert('Login Error')</script>";
     header("Location: ../userlogin.html");
 }
+if (isset($_GET['logout'])) {
+    session_start();
+    session_destroy();
+    header("Location: ../userlogin.html");
+    exit();
+}
+
 ?>
 
 
@@ -49,7 +56,7 @@ if (!isset($_SESSION['email'], $_SESSION['user_nic'])) {
             <li><a href="#"><i class='bx bxs-bookmarks icon'></i>Bookmarks</a></li>
             <div class="divider"></div>
             <li> <a href="#"><i class='bx bxs-cog icon'></i>Setting</a></li>
-            <li class="logout"> <a href="?action=runFunction"><i class='bx bxs-log-out icon'></i>Logout</a></li>
+            <li class="logout"> <a href="?logout=true" onclick="return confirmLogout();"><i class='bx bxs-log-out icon'></i>Logout</a></li>
 
         </ul>
     </section>
@@ -82,7 +89,7 @@ if (!isset($_SESSION['email'], $_SESSION['user_nic'])) {
                     </a>
                     <ul class="profile-link">
                         <li><a href="profilepage.php"><i class='bx bxs-user-circle icon' type='solid'></i>Profile</a></li>
-                        <li class="logout"><a href="?action=runFunction"><i class='bx bxs-user-circle icon' type='solid'></i>Logout</a>
+                        <li class="logout"><a href="?logout=true" onclick="return confirmLogout();"><i class='bx bxs-user-circle icon' type='solid'></i>Logout</a>
                         </li>
                     </ul>
 
@@ -362,31 +369,5 @@ if (!isset($_SESSION['email'], $_SESSION['user_nic'])) {
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="../JS/dashboard.js"></script>
 </body>
-
-<?php
-
-if (isset($_GET['action']) && $_GET['action'] == 'runFunction') {
-    unset($_SESSION['user_nic']);
-    unset($_SESSION['last_name']);
-    unset($_SESSION['first_name']);
-
-    logout();
-}
-
-function logout(){
-    echo "
-    <script>
-    
-    alert('Logging out..')
-
-    window.location.href = '../userlogin.html';
-    </script>
-
-    ";
-
-}
-
-
-?>
 
 </html>

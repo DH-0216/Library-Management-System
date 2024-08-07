@@ -34,10 +34,16 @@ if ($result->num_rows> 0) {
             header("Location: dashboard.php");
             exit();
     }else{
-            echo "Invaild Password. Please try again";
+           echo "<script>
+            alert('Invaild Password. Please try again');
+            window.location.href = '../userlogin.html';
+            </script>";
     } 
 } else {
-        echo "User not registered. Please sign up";
+        echo "<script>
+            alert('User not registered. Please sign up');
+            window.location.href = '../signup.html';
+            </script>";
 }
 }
 
