@@ -1,3 +1,44 @@
+<?php
+
+session_start();
+
+if (!isset($_SESSION['user_nic'])) {
+
+    echo "<script>alert('Login Error')</script>";
+
+    exit();
+}
+
+require 'db_connect.php';
+
+$nic_number = $_SESSION['user_nic'];
+
+$get_user_details_SQL = "SELECT * from members where nic_number = '$nic_number'";
+$result_users = $conn->query($get_user_details_SQL);
+
+if ($result_users->num_rows > 0) {
+
+    while ($row = $result_users->fetch_assoc()) {
+        $firstname = $row["first_name"];
+        $lastname = $row["last_name"];
+        $email = $row["email"];
+        $address = $row["address"];
+        $birthday = $row["birthday"];
+        $contact = $row["contact_number"];
+        $password = $row["password"];
+    }
+} else {
+    echo "No data";
+}
+
+
+
+?>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +46,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="CSS/profilepage.css">
+    <link rel="stylesheet" href="../CSS/profilepage.css">
     <title>Document</title>
 </head>
 
@@ -14,7 +55,7 @@
 
         <div class="user-info">
             <div class="user-info-wrapper">
-                <a href="#"><img src="img/user.png" alt="user" /></a>
+                <a href="#"><img src="../img/user.png" alt="user" /></a>
                 <a href="#">
                     <p>User Name</p>
                 </a>
@@ -28,7 +69,7 @@
             <li><a href="#" class="menu-link"><i class="bx bxs-bell icon"></i>Notifications</a></li>
             <div class="divider"></div>
             <li><a href="#" class="menu-link"><i class="bx bxs-cog icon"></i> Settings</a></li>
-            <li class="logout"><a href="#" class="menu-link"><i class="bx bxs-log-out icon"></i> Logout</a></li>
+            <li class="logout"><a href="?action=runFunction" class="menu-link"><i class="bx bxs-log-out icon"></i> Logout</a></li>
         </ul>
     </section>
 
@@ -44,28 +85,35 @@
                         <div class="account-edit">
                             <div class="input-container">
                                 <label>First Name</label>
-                                <input type="text" placeholder="First Name" />
+                                <input type="text" placeholder="First Name" value="<?php echo $firstname; ?>" />
                             </div>
                             <div class="input-container">
                                 <label>Last Name</label>
-                                <input type="text" placeholder="Last Name" />
+                                <input type="text" placeholder="Last Name" value="<?php echo $lastname; ?>" />
                             </div>
-                                
+
                             <div class="input-container">
                                 <label>Email</label>
-                                <input type="email" placeholder="Email" />
+                                <input type="email" placeholder="Email" value="<?php echo $email; ?>" />
                             </div>
                             <div class="input-container">
                                 <label>Phone Number</label>
-                                <input type="text" placeholder="Phone Number" />
+                                <input type="text" placeholder="Phone Number" value="<?php echo $contact; ?>" />
                             </div>
-                               
+
+                            <div class="input-container">
+                                <label class="form-label">Birthday</label>
+                                <input type="text" value="<?php echo $birthday; ?>">
+                            </div>
+
+
+
                             <div class="input-container">
                                 <label>Address</label>
-                                <textarea placeholder="Address"></textarea>
+                                <textarea placeholder="Address" value="<?php echo $address ?>"></textarea>
                             </div>
                         </div>
-                        
+
                         <div class="btn-constrainer">
                             <button class="btn-cancel">Cancel</button>
                             <button class="btn-update">Update</button>
@@ -178,7 +226,26 @@
     </main>
 
 
-    <script src="JS/profilepage.js"></script>
+    <script src="../JS/profilepage.js"></script>
+
 </body>
+
+<?php
+
+function logout(){
+    echo "
+    <script>
+    
+    alert('Logging out..')
+
+    window.location.href = '../userlogin.html';
+    </script>
+
+    ";
+
+}
+
+
+?>
 
 </html>
