@@ -31,6 +31,13 @@ if ($result_users->num_rows > 0) {
     echo "No data";
 }
 
+if (isset($_GET['logout'])) {
+    session_start();
+    session_destroy();
+    header("Location: ../userlogin.html");
+    exit();
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -64,7 +71,7 @@ if ($result_users->num_rows > 0) {
             <li><a href="#" class="menu-link"><i class="bx bxs-bell icon"></i>Notifications</a></li>
             <div class="divider"></div>
             <li><a href="#" class="menu-link"><i class="bx bxs-cog icon"></i> Settings</a></li>
-            <li class="logout"><a href="?action=runFunction" onclick="return confirmLogout();"><i class="bx bxs-log-out icon"></i>
+            <li class="logout"><a href="?logout=true" onclick="return confirmLogout();"><i class="bx bxs-log-out icon"></i>
                     Logout</a></li>
         </ul>
     </section>
