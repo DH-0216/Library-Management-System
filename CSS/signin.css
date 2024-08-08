@@ -13,6 +13,8 @@ body {
     background: url("../img/signin.jpeg") no-repeat;
     background-position: center;
     background-size: cover;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: overlay ;
 }
 
 .form-box {
