@@ -10,9 +10,11 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: url("../img/signup.png") no-repeat;
+    background: url("../img/signup.jpeg") no-repeat;
     background-position: center;
     background-size: cover;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: overlay ;
 }
 
 .form-box {

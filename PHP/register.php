@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($stmt->execute()) {
            echo "<script>
               alert('Registration Success');
-              window.location.href = 'userlogin.html';
+              window.location.href = '../userlogin.html';
             </script>";
         } else {
             echo "Error: " . $stmt->error;

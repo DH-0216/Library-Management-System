@@ -30,10 +30,9 @@ header a {
   
 }
 
-.logo {
-  font-size: 2em;
-  color: #fff;
-  user-select: none;
+.logo img {
+ height: 50px;
+ width: auto;
   margin-top: 40px;
 }
 .navigation{
