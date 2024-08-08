@@ -198,7 +198,6 @@ header {
   font-weight: bold;
 }
 
-
 .account-edit .input-container {
   margin-bottom: 25px;
 }
@@ -226,11 +225,18 @@ textarea {
 
 .btn-constrainer {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+.right-button {
+  display: flex;
+  gap: 10px;
 }
 
 .btn-cancel,
-.btn-update {
+.btn-update,
+.btn-delete {
   background-color: #007bff;
   color: white;
   border: none;
@@ -240,7 +246,14 @@ textarea {
   font-size: 16px;
   cursor: pointer;
 }
-
+.btn-delete a {
+  text-decoration: none;
+  color: #fff;
+}
+.btn-cancel a {
+  text-decoration: none;
+  color: black;
+}
 .password-section {
   padding: 20px;
   background-color: #f9f9f9;
@@ -280,19 +293,17 @@ textarea {
   box-sizing: border-box;
 }
 
-.btn-constrainer {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-}
-
 .btn-cancel {
   background-color: #ccc;
   color: #fff;
 }
 
 .btn-update {
-  background-color: #28a745;
+  background-color: var(--blue);
+  color: #fff;
+}
+.btn-delete {
+  background-color: red;
   color: #fff;
 }
 
@@ -312,15 +323,14 @@ textarea {
   text-decoration: underline;
 }
 
-
-#notiffication-section .card-body .mb-4{
+#notiffication-section .card-body .mb-4 {
   margin-top: 40px;
 }
 
-#notiffication-section .card-body .form-group{
-margin: 30px;
-padding-left: 30px;
+#notiffication-section .card-body .form-group {
+  margin: 30px;
+  padding-left: 30px;
 }
-#notiffication-section .card-body .form-group .switcher-label{
+#notiffication-section .card-body .form-group .switcher-label {
   padding-left: 10px;
 }

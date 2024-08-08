@@ -118,7 +118,10 @@ if (isset($_GET['logout'])) {
 
                         <div class="btn-constrainer">
                             <button type="button" class="btn-cancel"><a href="dashboard.php">Cancel</a></button>
-                            <button type="submit" class="btn-update">Update</button>
+                            <div class="right-buttons">
+                                <button type="submit" class="btn-update">Update</button>
+                                <button type="button" class="btn-delete"><a href="delete.php">Delete Account</a></button>
+                            </div>
                         </div>
                     </form>
                 </section>
