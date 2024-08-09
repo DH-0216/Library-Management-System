@@ -248,6 +248,7 @@ if (isset($_GET['logout'])) {
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
     <script src="../JS/profilepage.js"></script>
+    <script src="../JS/togglePassword.js"></script>
 
 </body>
 
