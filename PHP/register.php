@@ -16,17 +16,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($first_name && $last_name && $nic_number && $address && $email && $contact_number && $password && $confirm_password && $birthday) {
 
-        $servername = "localhost";
-        $username = "root";
-        $dbpassword = "";
-        $dbname = "library";
-
-        $conn = new mysqli($servername, $username, $dbpassword, $dbname);
-
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
-
+        require 'db_connect.php';
+        
         $stmt = $conn->prepare("INSERT INTO members(first_name, last_name, nic_number, address, email, contact_number, password, birthday) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
         $stmt->bind_param("sssssiss", $first_name, $last_name, $nic_number, $address, $email, $contact_number, $password, $birthday);
 
