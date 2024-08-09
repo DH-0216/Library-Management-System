@@ -268,13 +268,22 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .btn-constrainer {
   display:flex; 
   justify-content: space-between;
-  
-  align-items: center;
+  left: 20%;
   margin-top: 20px;
+}
+
+
+
+.btn-constrainer-delete{
+  display:flex; 
+  justify-content: end;
+  margin-top: -42px;
+  
 }
 .right-button{
   display: flex;
-  gap: 10px;
+  justify-content: end;
+  margin-right: 160px;
 }
 
 .btn-cancel,
