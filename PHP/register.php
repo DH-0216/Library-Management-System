@@ -1,4 +1,7 @@
 <?php
+
+require 'db_connect.php';
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $first_name = $_POST['first_name'];
     $last_name = $_POST['last_name'];
@@ -16,7 +19,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($first_name && $last_name && $nic_number && $address && $email && $contact_number && $password && $confirm_password && $birthday) {
 
-        require 'db_connect.php';
         
         $stmt = $conn->prepare("INSERT INTO members(first_name, last_name, nic_number, address, email, contact_number, password, birthday) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
         $stmt->bind_param("sssssiss", $first_name, $last_name, $nic_number, $address, $email, $contact_number, $password, $birthday);
