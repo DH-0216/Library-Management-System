@@ -142,17 +142,17 @@ if (isset($_GET['logout'])) {
                     <h2>Password Settings</h2>
                     <div class="content">
                         <div class="inputbox">
-                            <ion-icon name="eye-off-outline" onclick="toggleConfirmPassword()" id="eyeicon2"></ion-icon>
+                            <ion-icon name="eye-off-outline" id="eyeicon" class="eyeicon"></ion-icon>
                             <input type="password" id="confirm_password" name="current_password" required>
                             <label for="confirm_password">Current Password</label>
                         </div>
                         <div class="inputbox">
-                            <ion-icon name="eye-off-outline" onclick="togglePassword()" id="eyeicon"></ion-icon>
+                            <ion-icon name="eye-off-outline" id="eyeicon" class="eyeicon"></ion-icon>
                             <input type="password" id="password" name="new_password" required>
                             <label for="password">New Password</label>
                         </div>
                         <div class="inputbox">
-                            <ion-icon name="eye-off-outline" onclick="toggleConfirmPassword()" id="eyeicon2"></ion-icon>
+                            <ion-icon name="eye-off-outline" id="eyeicon" class="eyeicon"></ion-icon>
                             <input type="password" id="confirm_password" name="confirm_password" required>
                             <label for="confirm_password">Confirm Password</label>
                         </div>
