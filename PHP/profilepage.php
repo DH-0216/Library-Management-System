@@ -119,8 +119,7 @@ if (isset($_GET['logout'])) {
 
                         <div class="btn-constrainer">
                             <button type="button" class="btn-cancel"><a href="dashboard.php">Cancel</a></button>
-                            <div class="right-buttons">
-
+                            <div class="right-button">
                                 <button type="submit" name="update_account" class="btn-update">Update</button>
                             </div>
                         </div>
@@ -128,7 +127,7 @@ if (isset($_GET['logout'])) {
                 </form>
 
                 <form action="delete.php" method="post" name="delete-button">
-                    <div class="btn-constrainer">
+                    <div class="btn-constrainer-delete">
                         <button type="submit" name="delete_account" class="btn-delete"
                             onclick="return confirm('Are you sure you want to delete your account? This action cannot be undone.');">
                             Delete Account
