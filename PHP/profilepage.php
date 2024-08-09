@@ -71,167 +71,182 @@ if (isset($_GET['logout'])) {
             <li><a href="#" class="menu-link"><i class="bx bxs-bell icon"></i>Notifications</a></li>
             <div class="divider"></div>
             <li><a href="#" class="menu-link"><i class="bx bxs-cog icon"></i> Settings</a></li>
-            <li class="logout"><a href="?logout=true" onclick="return confirmLogout();"><i class="bx bxs-log-out icon"></i>
+            <li class="logout"><a href="?logout=true" onclick="return confirmLogout();"><i
+                        class="bx bxs-log-out icon"></i>
                     Logout</a></li>
         </ul>
     </section>
 
     <main>
         <div id="main" class="main-content">
-            <header>
-                <section class="generel-section">
-                    <form action="update.php" method="post">
-                        <div class="account-header">
-                            <h1 class="account-title">General</h1>
+            <section class="generel-section">
+                <form action="update.php" method="post">
+                    <h2>Account Setting</h2>
+                    <div class="content">
+
+                        <div class="inputbox">
+                            <ion-icon name="person-outline"></ion-icon>
+                            <input type="text" id="first_name" name="first_name" value="<?php echo $firstname; ?>">
+                            <label for="first_name">First Name</label>
                         </div>
-                        <div class="account-edit">
-                            <div class="input-container">
-                                <label>First Name</label>
-                                <input type="text" name="first_name" placeholder="First Name" value="<?php echo $firstname; ?>" />
-                            </div>
-                            <div class="input-container">
-                                <label>Last Name</label>
-                                <input type="text" name="last_name" placeholder="Last Name" value="<?php echo $lastname; ?>" />
-                            </div>
-
-                            <div class="input-container">
-                                <label>Email</label>
-                                <input type="email" name="email" placeholder="Email" value="<?php echo $email; ?>" />
-                            </div>
-                            <div class="input-container">
-                                <label>Phone Number</label>
-                                <input type="text" name="contact"  placeholder="Phone Number" value="<?php echo $contact; ?>" />
-                            </div>
-
-                            <div class="input-container">
-                                <label class="form-label">Birthday</label>
-                                <input type="text" name="birthday" value="<?php echo $birthday; ?>">
-                            </div>
-
-
-
-                            <div class="input-container">
-                                <label>Address</label>
-                                <input type="text" name="address" placeholder="Address" value="<?php echo $address ?>">
-                            </div>
+                        <div class="inputbox">
+                            <ion-icon name="person-outline"></ion-icon>
+                            <input type="text" id="last_name" name="last_name" value="<?php echo $lastname; ?>">
+                            <label for="last_name">Last Name</label>
                         </div>
+
+                        <div class="inputbox">
+                            <ion-icon name="location-outline"></ion-icon>
+                            <input type="text" id="address" name="address" value="<?php echo $address; ?>">
+                            <label for="address">Address</label>
+                        </div>
+                        <div class="inputbox">
+                            <ion-icon name="mail-outline"></ion-icon>
+                            <input type="email" id="email" name="email" value="<?php echo $email; ?>">
+                            <label for="email">E-mail</label>
+                        </div>
+                        <div class="inputbox">
+                            <ion-icon name="call-outline"></ion-icon>
+                            <input type="tel" id="contact_number" name="contact" value="<?php echo $contact; ?>">
+                            <label for="contact_number">Contact Number</label>
+                        </div>
+
+                        <div class="inputbox">
+                            <input type="date" name="birthday" value="<?php echo $birthday; ?>">
+                            <label for="birthday">Birthday</label>
+                        </div>
+
 
                         <div class="btn-constrainer">
                             <button type="button" class="btn-cancel"><a href="dashboard.php">Cancel</a></button>
                             <div class="right-buttons">
-                                <button type="submit" class="btn-update">Update</button>
-                                <button type="button" class="btn-delete"><a href="delete.php">Delete Account</a></button>
+
+                                <button type="submit" name="update_account" class="btn-update">Update</button>
                             </div>
                         </div>
-                    </form>
-                </section>
+                    </div>
+                </form>
+
+                <form action="delete.php" method="post" name="delete-button">
+                    <div class="btn-constrainer">
+                        <button type="submit" name="delete_account" class="btn-delete"
+                            onclick="return confirm('Are you sure you want to delete your account? This action cannot be undone.');">
+                            Delete Account
+                        </button>
+                    </div>
+                </form>
+            </section>
 
 
-                <section id="password-section" class="password-section" style="display: none;">
-                    <form action="updatepassword.php" method="post">
-                        <h2 class="mb-4">Password Settings</h2>
-                        <div class="account-edit">
-                            <div class="input-container">
-                                <label>Current Password</label>
-                                <input type="password" name="current_password" placeholder="Current Password" />
-                            </div>
-                            <div class="input-container">
-                                <label>New Password</label>
-                                <input type="password" name="new_password" placeholder="New Password" />
-                            </div>
-                            <div class="input-container">
-                                <label>Confirm New Password</label>
-                                <input type="password" name="confirm_password" placeholder="Confirm New Password" />
-                            </div>
+            <section id="password-section" class="password-section" style="display: none;">
+                <form action="updatepassword.php" method="post">
+                    <h2>Password Settings</h2>
+                    <div class="content">
+                        <div class="inputbox">
+                            <ion-icon name="eye-off-outline" onclick="toggleConfirmPassword()" id="eyeicon2"></ion-icon>
+                            <input type="password" id="confirm_password" name="current_password" required>
+                            <label for="confirm_password">Current Password</label>
+                        </div>
+                        <div class="inputbox">
+                            <ion-icon name="eye-off-outline" onclick="togglePassword()" id="eyeicon"></ion-icon>
+                            <input type="password" id="password" name="new_password" required>
+                            <label for="password">New Password</label>
+                        </div>
+                        <div class="inputbox">
+                            <ion-icon name="eye-off-outline" onclick="toggleConfirmPassword()" id="eyeicon2"></ion-icon>
+                            <input type="password" id="confirm_password" name="confirm_password" required>
+                            <label for="confirm_password">Confirm Password</label>
+                        </div>
+                    </div>
+                    <div class="btn-constrainer">
+                        <button type="button" class="btn-cancel"><a href="dashboard.php">Cancel</a></button>
+                        <button type="submit" class="btn-update">Update</button>
+                    </div>
+                    <div class="extra-info">
+                        <p>If you forgot your password, <a href="#">click here</a> to reset it.</p>
+                    </div>
+                </form>
+            </section>
+
+
+            <section id="notiffication-section" class="notiffication-section" style="display: none;">
+                <form>
+                    <h2 class="mb-4">Notifications Settings</h2>
+                    <div class="card-body">
+                        <h4 class="mb-4">Activity</h4>
+                        <div class="form-group">
+                            <label class="switcher">
+                                <input type="checkbox" class="switcher-input" checked />
+                                <span class="switcher-indicator">
+                                    <span class="switcher-yes"></span>
+                                    <span class="switcher-no"></span>
+                                </span>
+                                <span class="switcher-label">Email me when new book publish</span>
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label class="switcher">
+                                <input type="checkbox" class="switcher-input" checked />
+                                <span class="switcher-indicator">
+                                    <span class="switcher-yes"></span>
+                                    <span class="switcher-no"></span>
+                                </span>
+                                <span class="switcher-label">Email me when new book publish</span>
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label class="switcher">
+                                <input type="checkbox" class="switcher-input" checked />
+                                <span class="switcher-indicator">
+                                    <span class="switcher-yes"></span>
+                                    <span class="switcher-no"></span>
+                                </span>
+                                <span class="switcher-label">Email me when new book publish</span>
+                            </label>
+                        </div>
+                        <h4 class="mb-4">System</h4>
+                        <div class="form-group">
+                            <label class="switcher">
+                                <input type="checkbox" class="switcher-input" checked />
+                                <span class="switcher-indicator">
+                                    <span class="switcher-yes"></span>
+                                    <span class="switcher-no"></span>
+                                </span>
+                                <span class="switcher-label">Email me when new book publish</span>
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label class="switcher">
+                                <input type="checkbox" class="switcher-input" checked />
+                                <span class="switcher-indicator">
+                                    <span class="switcher-yes"></span>
+                                    <span class="switcher-no"></span>
+                                </span>
+                                <span class="switcher-label">Email me when new book publish</span>
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label class="switcher">
+                                <input type="checkbox" class="switcher-input" checked />
+                                <span class="switcher-indicator">
+                                    <span class="switcher-yes"></span>
+                                    <span class="switcher-no"></span>
+                                </span>
+                                <span class="switcher-label">Email me when new book publish</span>
+                            </label>
                         </div>
                         <div class="btn-constrainer">
-                            <button type="button" class="btn-cancel"><a href="dashboard.php">Cancel</a></button>
-                            <button type="submit" class="btn-update">Update</button>
+                            <button class="btn-cancel"><a href="dashboard.php">Cancel</a></button>
+                            <button class="btn-update">Update</button>
                         </div>
-                        <div class="extra-info">
-                            <p>If you forgot your password, <a href="#">click here</a> to reset it.</p>
-                        </div>
-                    </form>
-                </section>
-
-
-                <section id="notiffication-section" class="notiffication-section" style="display: none;">
-                    <form>
-                        <h2 class="mb-4">Notifications Settings</h2>
-                        <div class="card-body">
-                            <h4 class="mb-4">Activity</h4>
-                            <div class="form-group">
-                                <label class="switcher">
-                                    <input type="checkbox" class="switcher-input" checked />
-                                    <span class="switcher-indicator">
-                                        <span class="switcher-yes"></span>
-                                        <span class="switcher-no"></span>
-                                    </span>
-                                    <span class="switcher-label">Email me when new book publish</span>
-                                </label>
-                            </div>
-                            <div class="form-group">
-                                <label class="switcher">
-                                    <input type="checkbox" class="switcher-input" checked />
-                                    <span class="switcher-indicator">
-                                        <span class="switcher-yes"></span>
-                                        <span class="switcher-no"></span>
-                                    </span>
-                                    <span class="switcher-label">Email me when new book publish</span>
-                                </label>
-                            </div>
-                            <div class="form-group">
-                                <label class="switcher">
-                                    <input type="checkbox" class="switcher-input" checked />
-                                    <span class="switcher-indicator">
-                                        <span class="switcher-yes"></span>
-                                        <span class="switcher-no"></span>
-                                    </span>
-                                    <span class="switcher-label">Email me when new book publish</span>
-                                </label>
-                            </div>
-                            <h4 class="mb-4">System</h4>
-                            <div class="form-group">
-                                <label class="switcher">
-                                    <input type="checkbox" class="switcher-input" checked />
-                                    <span class="switcher-indicator">
-                                        <span class="switcher-yes"></span>
-                                        <span class="switcher-no"></span>
-                                    </span>
-                                    <span class="switcher-label">Email me when new book publish</span>
-                                </label>
-                            </div>
-                            <div class="form-group">
-                                <label class="switcher">
-                                    <input type="checkbox" class="switcher-input" checked />
-                                    <span class="switcher-indicator">
-                                        <span class="switcher-yes"></span>
-                                        <span class="switcher-no"></span>
-                                    </span>
-                                    <span class="switcher-label">Email me when new book publish</span>
-                                </label>
-                            </div>
-                            <div class="form-group">
-                                <label class="switcher">
-                                    <input type="checkbox" class="switcher-input" checked />
-                                    <span class="switcher-indicator">
-                                        <span class="switcher-yes"></span>
-                                        <span class="switcher-no"></span>
-                                    </span>
-                                    <span class="switcher-label">Email me when new book publish</span>
-                                </label>
-                            </div>
-                            <div class="btn-constrainer">
-                                <button class="btn-cancel"><a href="dashboard.php">Cancel</a></button>
-                                <button class="btn-update">Update</button>
-                            </div>
-                        </div>
-                    </form>
-                </section>
+                    </div>
+                </form>
+            </section>
             </header>
         </div>
     </main>
-
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
     <script src="../JS/profilepage.js"></script>
 

@@ -34,7 +34,9 @@ if (isset($_GET['logout'])) {
             <div class="user-info-wrapper">
                 <a href="#"><img src="../img/user.png" alt="user" /></a>
                 <a href="#">
-                    <p><?php echo htmlspecialchars($_SESSION['first_name']) . " " . htmlspecialchars($_SESSION['last_name']); ?></p>
+                    <p>
+                        <?php echo htmlspecialchars($_SESSION['first_name']) . " " . htmlspecialchars($_SESSION['last_name']); ?>
+                    </p>
                 </a>
             </div>
         </div>
@@ -56,14 +58,15 @@ if (isset($_GET['logout'])) {
             <li><a href="#"><i class='bx bxs-bookmarks icon'></i>Bookmarks</a></li>
             <div class="divider"></div>
             <li> <a href="#"><i class='bx bxs-cog icon'></i>Setting</a></li>
-            <li class="logout"> <a href="?logout=true" onclick="return confirmLogout();"><i class='bx bxs-log-out icon'></i>Logout</a></li>
+            <li class="logout"> <a href="?logout=true" onclick="return confirmLogout();"><i
+                        class='bx bxs-log-out icon'></i>Logout</a></li>
 
         </ul>
     </section>
 
     <section id="content">
         <nav>
-            <i class='bx bx-menu toggle-sidebar'></i>
+            <i class='bx bx-menu menu-icon toggle-sidebar'></i>
             <form action="#">
                 <div class="form-group">
                     <input type="text" placeholder="Search here">
@@ -83,13 +86,17 @@ if (isset($_GET['logout'])) {
                 <a href="#"><img src="../img/user.png" alt="User">
                     <a href="#">
                         <div class="name-role">
-                            <h4 class="name"><?php echo htmlspecialchars($_SESSION['first_name']) . " " . htmlspecialchars($_SESSION['last_name']); ?></h4>
+                            <h4 class="name">
+                                <?php echo htmlspecialchars($_SESSION['first_name']) . " " . htmlspecialchars($_SESSION['last_name']); ?>
+                            </h4>
                             <small class="role">member</small>
                         </div>
                     </a>
                     <ul class="profile-link">
-                        <li><a href="profilepage.php"><i class='bx bxs-user-circle icon' type='solid'></i>Profile</a></li>
-                        <li class="logout"><a href="?logout=true" onclick="return confirmLogout();"><i class='bx bxs-user-circle icon' type='solid'></i>Logout</a>
+                        <li><a href="profilepage.php"><i class='bx bxs-user-circle icon' type='solid'></i>Profile</a>
+                        </li>
+                        <li class="logout"><a href="?logout=true" onclick="return confirmLogout();"><i
+                                    class='bx bxs-user-circle icon' type='solid'></i>Logout</a>
                         </li>
                     </ul>
 
@@ -106,219 +113,181 @@ if (isset($_GET['logout'])) {
             </ul>
             <div class="info-data">
                 <div class="card">
-                    <div class="card-single">
-                        <div class="card-header">
-                            <img src="../img/Game of thrones.jpg" alt="Game of thrones">
-                            <p>Simple Test</p>
-                            <i class='bx bx-bookmark like-btn'></i>
-                        </div>
-                        <div class="card-content">
-                            <h2>Game of thrones</h2>
-                            <p>simple test 3</p>
-                        </div>
+
+
+
+                    <section class="card-sm" style="background-image:url('../img/GOTMTI2.jpg')">
+                        <p class="card__text-sm">Tanifa - Spain <i class='bx bx-bookmark like-btn'></i> </p>
                         <div class="card-footer">
-                            <p style="background-color: #e48e2c;">category</p>
+                            <p >category</p>
                             <div class="btn-group">
                                 <button>Borrow</button>
                                 <div class="share">
                                     <button class="share-btn">
-                                        <ion-icon name="share-social-outline"></ion-icon>
+                                        <ion-icon name="share-outline"></ion-icon>
                                     </button>
                                     <ul class="popup">
                                         <li>
-                                            <a href="#" style="color: rgb(79, 153, 213)"><i
-                                                    class="bx bxl-twitter"></i></a>
+                                            <a href="#" style="color: rgb(79, 153, 213)"><i class="bx bxl-twitter"></i></a>
                                         </li>
                                         <li>
-                                            <a href="#" style="color: rgb(34, 173, 34)"><i
-                                                    class="bx bxl-whatsapp"></i></a>
+                                            <a href="#" style="color: rgb(34, 173, 34)"><i class="bx bxl-whatsapp"></i></a>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
+                        
+            
+                    </section>
+
+
+
+                    <section class="card-sm" style="background-image: url('../img/images\ \(5\).jpeg')">
+                        <p class="card__text-sm">Japan Alps <i class='bx bx-bookmark like-btn'></i></p>
+                    <div class="card-footer">
+                        <p>category</p>
+                        <div class="btn-group">
+                            <button>Borrow</button>
+                            <div class="share">
+                                <button class="share-btn">
+                                    <ion-icon name="share-outline"></ion-icon>
+                                </button>
+                                <ul class="popup">
+                                    <li>
+                                        <a href="#" style="color: rgb(79, 153, 213)"><i class="bx bxl-twitter"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" style="color: rgb(34, 173, 34)"><i class="bx bxl-whatsapp"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
+                        
+                    </section>
 
 
-                    <div class="card-single">
-                        <div class="card-header">
-                            <img src="../img/Lord of the Rings.jpeg " alt="Lord of the Rings">
-                            <p>Simple Test</p>
-                            <i class='bx bx-bookmark like-btn'></i>
+
+                    <section class="card-sm" style="background-image: url('../img/The\ Games\ God\ Plays.webp')">
+                        <p class="card__text-sm">Sierra Nevada - USA <i class='bx bx-bookmark like-btn'></i></p>
+                    <div class="card-footer">
+                        <p >category</p>
+                        <div class="btn-group">
+                            <button>Borrow</button>
+                            <div class="share">
+                                <button class="share-btn">
+                                    <ion-icon name="share-outline"></ion-icon>
+                                </button>
+                                <ul class="popup">
+                                    <li>
+                                        <a href="#" style="color: rgb(79, 153, 213)"><i class="bx bxl-twitter"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" style="color: rgb(34, 173, 34)"><i class="bx bxl-whatsapp"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="card-content">
-                            <h2>Lord of the Rings</h2>
-                            <p>simple test 3</p>
-                        </div>
+                    </div>
+                        
+                    </section>
+
+
+
+                    <section class="card-sm" style="background-image: url('../img/ONYX\ STORM.jpg')">
+                        <p class="card__text-sm">Cappadocia - Turkey <i class='bx bx-bookmark like-btn'></i></p>
                         <div class="card-footer">
-                            <p style="background-color: #e48e2c;">category</p>
+                            <p >category</p>
                             <div class="btn-group">
                                 <button>Borrow</button>
                                 <div class="share">
                                     <button class="share-btn">
-                                        <ion-icon name="share-social-outline"></ion-icon>
+                                        <ion-icon name="share-outline"></ion-icon>
                                     </button>
                                     <ul class="popup">
                                         <li>
-                                            <a href="#" style="color: rgb(79, 153, 213)"><i
-                                                    class="bx bxl-twitter"></i></a>
+                                            <a href="#" style="color: rgb(79, 153, 213)"><i class="bx bxl-twitter"></i></a>
                                         </li>
                                         <li>
-                                            <a href="#" style="color: rgb(34, 173, 34)"><i
-                                                    class="bx bxl-whatsapp"></i></a>
+                                            <a href="#" style="color: rgb(34, 173, 34)"><i class="bx bxl-whatsapp"></i></a>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                        
+                    </section>
 
 
 
-                    <div class="card-single">
-                        <div class="card-header">
-                            <img src="../img/Harry Potter.jpeg" alt="Harry Potter">
-                            <p>Simple Test</p>
-                            <i class='bx bx-bookmark like-btn'></i>
-                        </div>
-                        <div class="card-content">
-                            <h2>Harry Potter</h2>
-                            <p>simple test 3</p>
-                        </div>
+                    <section class="card-sm" style="background-image: url('../img/Don\ Quixote.jpeg')">
+                        <p class="card__text-sm">Cappadocia - Turkey <i class='bx bx-bookmark like-btn'></i></p>
                         <div class="card-footer">
-                            <p style="background-color: #e48e2c;">category</p>
+                            <p >category</p>
                             <div class="btn-group">
                                 <button>Borrow</button>
                                 <div class="share">
                                     <button class="share-btn">
-                                        <ion-icon name="share-social-outline"></ion-icon>
+                                        <ion-icon name="share-outline"></ion-icon>
                                     </button>
                                     <ul class="popup">
                                         <li>
-                                            <a href="#" style="color: rgb(79, 153, 213)"><i
-                                                    class="bx bxl-twitter"></i></a>
+                                            <a href="#" style="color: rgb(79, 153, 213)"><i class="bx bxl-twitter"></i></a>
                                         </li>
                                         <li>
-                                            <a href="#" style="color: rgb(34, 173, 34)"><i
-                                                    class="bx bxl-whatsapp"></i></a>
+                                            <a href="#" style="color: rgb(34, 173, 34)"><i class="bx bxl-whatsapp"></i></a>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                        
+                    </section>
 
 
 
-
-                    <div class="card-single">
-                        <div class="card-header">
-                            <img src="../img/ONYX STORM.jpg" alt="ONYX STORM">
-                            <p>Simple Test</p>
-                            <i class='bx bx-bookmark like-btn'></i>
-                        </div>
-                        <div class="card-content">
-                            <h2>ONYX STORM</h2>
-                            <p>simple test 3</p>
-                        </div>
+                    <section class="card-sm" style="background-image: url('../img/Harry\ Potter.jpeg')">
+                        <p class="card__text-sm">Cappadocia - Turkey <i class='bx bx-bookmark like-btn'></i></p>
                         <div class="card-footer">
-                            <p style="background-color: #e48e2c;">category</p>
+                            <p >category</p>
                             <div class="btn-group">
                                 <button>Borrow</button>
                                 <div class="share">
                                     <button class="share-btn">
-                                        <ion-icon name="share-social-outline"></ion-icon>
+                                        <ion-icon name="share-outline"></ion-icon>
                                     </button>
                                     <ul class="popup">
                                         <li>
-                                            <a href="#" style="color: rgb(79, 153, 213)"><i
-                                                    class="bx bxl-twitter"></i></a>
+                                            <a href="#" style="color: rgb(79, 153, 213)"><i class="bx bxl-twitter"></i></a>
                                         </li>
                                         <li>
-                                            <a href="#" style="color: rgb(34, 173, 34)"><i
-                                                    class="bx bxl-whatsapp"></i></a>
+                                            <a href="#" style="color: rgb(34, 173, 34)"><i class="bx bxl-whatsapp"></i></a>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                        
+                    </section>
 
 
 
-                    <div class="card-single">
-                        <div class="card-header">
-                            <img src="../img/The Games God Plays.webp" alt="The Games God Plays">
-                            <p>Simple Test</p>
-                            <i class='bx bx-bookmark like-btn'></i>
-                        </div>
-                        <div class="card-content">
-                            <h2>The Games God Plays</h2>
-                            <p>simple test 3</p>
-                        </div>
-                        <div class="card-footer">
-                            <p style="background-color: #e48e2c;">category</p>
-                            <div class="btn-group">
-                                <button>Borrow</button>
-                                <div class="share">
-                                    <button class="share-btn">
-                                        <ion-icon name="share-social-outline"></ion-icon>
-                                    </button>
-                                    <ul class="popup">
-                                        <li>
-                                            <a href="#" style="color: rgb(79, 153, 213)"><i
-                                                    class="bx bxl-twitter"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#" style="color: rgb(34, 173, 34)"><i
-                                                    class="bx bxl-whatsapp"></i></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card-single">
-                        <div class="card-header">
-                            <img src="../img/Don Quixote.jpeg" alt="Don Quixote">
-                            <p>Simple Test</p>
-                            <i class='bx bx-bookmark like-btn'></i>
-                        </div>
-                        <div class="card-content">
-                            <h2>Don Quixote</h2>
-                            <p>simple test 3</p>
-                        </div>
-                        <div class="card-footer">
-                            <p style="background-color: #e48e2c;">category</p>
-                            <div class="btn-group">
-                                <button>Borrow</button>
-                                <div class="share">
-                                    <button class="share-btn">
-                                        <ion-icon name="share-social-outline"></ion-icon>
-                                    </button>
-                                    <ul class="popup">
-                                        <li>
-                                            <a href="#" style="color: rgb(79, 153, 213)"><i
-                                                    class="bx bxl-twitter"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#" style="color: rgb(34, 173, 34)"><i
-                                                    class="bx bxl-whatsapp"></i></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
 
             <div class="data">
-                <div class="content-data">
+                <div class="content-data">   
                     <div class="head">
                         <h3>Recennt Books</h3>
+                    </div>
+                    <div class="content-data-card">
+                        <section class="card-sm" style="background-image:url('../img/GOTMTI2.jpg')"> </section>
+            
+                        <section class="card-sm" style="background-image: url('../img/images\ \(5\).jpeg')"></section>
 
+                        <section class="card-sm" style="background-image: url('../img/The\ Games\ God\ Plays.webp')"></section>
+         
                     </div>
                 </div>
                 <div class="content-data">
