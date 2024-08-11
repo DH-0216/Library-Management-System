@@ -112,14 +112,16 @@ if (isset($_GET['logout'])) {
                 <li><a href="#" class="active">Dashboard</a></li>
             </ul>
             <div class="info-data">
-                <div class="card">
+                <div class="card-container">
 
-
-
-                    <section class="card-sm" style="background-image:url('../img/GOTMTI2.jpg')">
-                        <p class="card__text-sm">Tanifa - Spain <i class='bx bx-bookmark like-btn'></i> </p>
+                    <div class="card">                  
+                        <img src="../img/Game of thrones.jpg" alt="">
+                        <div class="card-header">
+                            <p>Tanifa-Spain </p>
+                            <i class='bx bx-bookmark like-btn'></i>
+                        </div>
                         <div class="card-footer">
-                            <p >category</p>
+                            <p>category</p>
                             <div class="btn-group">
                                 <button>Borrow</button>
                                 <div class="share">
@@ -128,77 +130,54 @@ if (isset($_GET['logout'])) {
                                     </button>
                                     <ul class="popup">
                                         <li>
-                                            <a href="#" style="color: rgb(79, 153, 213)"><i class="bx bxl-twitter"></i></a>
+                                            <a href="#" style="color: rgb(79, 153, 213)"><i
+                                                    class="bx bxl-twitter"></i></a>
                                         </li>
                                         <li>
-                                            <a href="#" style="color: rgb(34, 173, 34)"><i class="bx bxl-whatsapp"></i></a>
+                                            <a href="#" style="color: rgb(34, 173, 34)"><i
+                                                    class="bx bxl-whatsapp"></i></a>
                                         </li>
                                     </ul>
                                 </div>
-                            </div>
-                        </div>
-                        
-            
-                    </section>
-
-
-
-                    <section class="card-sm" style="background-image: url('../img/images\ \(5\).jpeg')">
-                        <p class="card__text-sm">Japan Alps <i class='bx bx-bookmark like-btn'></i></p>
-                    <div class="card-footer">
-                        <p>category</p>
-                        <div class="btn-group">
-                            <button>Borrow</button>
-                            <div class="share">
-                                <button class="share-btn">
-                                    <ion-icon name="share-outline"></ion-icon>
-                                </button>
-                                <ul class="popup">
-                                    <li>
-                                        <a href="#" style="color: rgb(79, 153, 213)"><i class="bx bxl-twitter"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#" style="color: rgb(34, 173, 34)"><i class="bx bxl-whatsapp"></i></a>
-                                    </li>
-                                </ul>
                             </div>
                         </div>
                     </div>
-                        
-                    </section>
 
-
-
-                    <section class="card-sm" style="background-image: url('../img/The\ Games\ God\ Plays.webp')">
-                        <p class="card__text-sm">Sierra Nevada - USA <i class='bx bx-bookmark like-btn'></i></p>
-                    <div class="card-footer">
-                        <p >category</p>
-                        <div class="btn-group">
-                            <button>Borrow</button>
-                            <div class="share">
-                                <button class="share-btn">
-                                    <ion-icon name="share-outline"></ion-icon>
-                                </button>
-                                <ul class="popup">
-                                    <li>
-                                        <a href="#" style="color: rgb(79, 153, 213)"><i class="bx bxl-twitter"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#" style="color: rgb(34, 173, 34)"><i class="bx bxl-whatsapp"></i></a>
-                                    </li>
-                                </ul>
+                    <div class="card">
+                        <img src="../img/images (5).jpeg" alt="">
+                        <div class="card-header">
+                            <p>Tanifa-Spain </p>
+                            <i class='bx bx-bookmark like-btn'></i>
+                        </div>
+                        <div class="card-footer">
+                            <p>category</p>
+                            <div class="btn-group">
+                                <button>Borrow</button>
+                                <div class="share">
+                                    <button class="share-btn">
+                                        <ion-icon name="share-outline"></ion-icon>
+                                    </button>
+                                    <ul class="popup">
+                                        <li>
+                                            <a href="#" style="color: rgb(79, 153, 213)"><i class="bx bxl-twitter"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#" style="color: rgb(34, 173, 34)"><i class="bx bxl-whatsapp"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
-                        
-                    </section>
 
-
-
-                    <section class="card-sm" style="background-image: url('../img/ONYX\ STORM.jpg')">
-                        <p class="card__text-sm">Cappadocia - Turkey <i class='bx bx-bookmark like-btn'></i></p>
+                    <div class="card">
+                        <img src="../img/Harry Potter.jpeg" alt="">
+                        <div class="card-header">
+                            <p>Tanifa-Spain </p>
+                            <i class='bx bx-bookmark like-btn'></i>
+                        </div>
                         <div class="card-footer">
-                            <p >category</p>
+                            <p>category</p>
                             <div class="btn-group">
                                 <button>Borrow</button>
                                 <div class="share">
@@ -216,15 +195,17 @@ if (isset($_GET['logout'])) {
                                 </div>
                             </div>
                         </div>
-                        
-                    </section>
+                    </div>
 
 
-
-                    <section class="card-sm" style="background-image: url('../img/Don\ Quixote.jpeg')">
-                        <p class="card__text-sm">Cappadocia - Turkey <i class='bx bx-bookmark like-btn'></i></p>
+                    <div class="card">
+                        <img src="../img/The Games God Plays.webp" alt="">
+                        <div class="card-header">
+                            <p>Tanifa-Spain </p>
+                            <i class='bx bx-bookmark like-btn'></i>
+                        </div>
                         <div class="card-footer">
-                            <p >category</p>
+                            <p>category</p>
                             <div class="btn-group">
                                 <button>Borrow</button>
                                 <div class="share">
@@ -242,15 +223,17 @@ if (isset($_GET['logout'])) {
                                 </div>
                             </div>
                         </div>
-                        
-                    </section>
+                    </div>
 
 
-
-                    <section class="card-sm" style="background-image: url('../img/Harry\ Potter.jpeg')">
-                        <p class="card__text-sm">Cappadocia - Turkey <i class='bx bx-bookmark like-btn'></i></p>
+                    <div class="card">
+                        <img src="../img/Don Quixote.jpeg" alt="">
+                        <div class="card-header">
+                            <p>Tanifa-Spain </p>
+                            <i class='bx bx-bookmark like-btn'></i>
+                        </div>
                         <div class="card-footer">
-                            <p >category</p>
+                            <p>category</p>
                             <div class="btn-group">
                                 <button>Borrow</button>
                                 <div class="share">
@@ -268,8 +251,40 @@ if (isset($_GET['logout'])) {
                                 </div>
                             </div>
                         </div>
-                        
-                    </section>
+                    </div>
+
+
+                    <div class="card">
+                        <img src="../img/ONYX STORM.jpg" alt="">
+                        <div class="card-header">
+                            <p>Tanifa-Spain </p>
+                            <i class='bx bx-bookmark like-btn'></i>
+                        </div>
+                        <div class="card-footer">
+                            <p>category</p>
+                            <div class="btn-group">
+                                <button>Borrow</button>
+                                <div class="share">
+                                    <button class="share-btn">
+                                        <ion-icon name="share-outline"></ion-icon>
+                                    </button>
+                                    <ul class="popup">
+                                        <li>
+                                            <a href="#" style="color: rgb(79, 153, 213)"><i class="bx bxl-twitter"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#" style="color: rgb(34, 173, 34)"><i class="bx bxl-whatsapp"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+
+
+
 
 
 
@@ -277,17 +292,18 @@ if (isset($_GET['logout'])) {
             </div>
 
             <div class="data">
-                <div class="content-data">   
+                <div class="content-data">
                     <div class="head">
                         <h3>Recennt Books</h3>
                     </div>
                     <div class="content-data-card">
                         <section class="card-sm" style="background-image:url('../img/GOTMTI2.jpg')"> </section>
-            
+
                         <section class="card-sm" style="background-image: url('../img/images\ \(5\).jpeg')"></section>
 
-                        <section class="card-sm" style="background-image: url('../img/The\ Games\ God\ Plays.webp')"></section>
-         
+                        <section class="card-sm" style="background-image: url('../img/The\ Games\ God\ Plays.webp')">
+                        </section>
+
                     </div>
                 </div>
                 <div class="content-data">
