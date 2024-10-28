@@ -115,7 +115,7 @@ if (isset($_GET['logout'])) {
             <div class="info-data">
                 <div class="card-container">
 
-                    <div class="card">                  
+                    <div class="card">
                         <img src="../img/Game of thrones.jpg" alt="">
                         <div class="card-header">
                             <p>Tanifa-Spain </p>
@@ -124,7 +124,12 @@ if (isset($_GET['logout'])) {
                         <div class="card-footer">
                             <p>category</p>
                             <div class="btn-group">
-                                <button>Borrow</button>
+                                <form method="post" action="borrowbook.php">
+                                    <input type="hidden" name="book_id" value="1">
+                                    <label for="return_date">Return Date:</label>
+                                    <input type="date" id="return_date" name="return_date" required>
+                                    <button style="margin-top:10px;" type="submit" name="borrow">Borrow</button>
+                                </form>
                                 <div class="share">
                                     <button class="share-btn">
                                         <ion-icon name="share-outline"></ion-icon>
@@ -153,17 +158,24 @@ if (isset($_GET['logout'])) {
                         <div class="card-footer">
                             <p>category</p>
                             <div class="btn-group">
-                                <button>Borrow</button>
+                                <form method="post" action="borrowbook.php">
+                                    <input type="hidden" name="book_id" value="2">
+                                    <label for="return_date">Return Date:</label>
+                                    <input type="date" id="return_date" name="return_date" required>
+                                    <button style="margin-top:10px; type=" submit" name="borrow">Borrow</button>
+                                </form>
                                 <div class="share">
                                     <button class="share-btn">
                                         <ion-icon name="share-outline"></ion-icon>
                                     </button>
                                     <ul class="popup">
                                         <li>
-                                            <a href="#" style="color: rgb(79, 153, 213)"><i class="bx bxl-twitter"></i></a>
+                                            <a href="#" style="color: rgb(79, 153, 213)"><i
+                                                    class="bx bxl-twitter"></i></a>
                                         </li>
                                         <li>
-                                            <a href="#" style="color: rgb(34, 173, 34)"><i class="bx bxl-whatsapp"></i></a>
+                                            <a href="#" style="color: rgb(34, 173, 34)"><i
+                                                    class="bx bxl-whatsapp"></i></a>
                                         </li>
                                     </ul>
                                 </div>
@@ -180,17 +192,24 @@ if (isset($_GET['logout'])) {
                         <div class="card-footer">
                             <p>category</p>
                             <div class="btn-group">
-                                <button>Borrow</button>
+                                <form method="post" action="borrowbook.php">
+                                    <input type="hidden" name="book_id" value="3">
+                                    <label for="return_date">Return Date:</label>
+                                    <input type="date" id="return_date" name="return_date" required>
+                                    <button style="margin-top:10px; type=" submit" name="borrow">Borrow</button>
+                                </form>
                                 <div class="share">
                                     <button class="share-btn">
                                         <ion-icon name="share-outline"></ion-icon>
                                     </button>
                                     <ul class="popup">
                                         <li>
-                                            <a href="#" style="color: rgb(79, 153, 213)"><i class="bx bxl-twitter"></i></a>
+                                            <a href="#" style="color: rgb(79, 153, 213)"><i
+                                                    class="bx bxl-twitter"></i></a>
                                         </li>
                                         <li>
-                                            <a href="#" style="color: rgb(34, 173, 34)"><i class="bx bxl-whatsapp"></i></a>
+                                            <a href="#" style="color: rgb(34, 173, 34)"><i
+                                                    class="bx bxl-whatsapp"></i></a>
                                         </li>
                                     </ul>
                                 </div>
@@ -208,17 +227,24 @@ if (isset($_GET['logout'])) {
                         <div class="card-footer">
                             <p>category</p>
                             <div class="btn-group">
-                                <button>Borrow</button>
+                                <form method="post" action="borrowbook.php">
+                                    <input type="hidden" name="book_id" value="4">
+                                    <label for="return_date">Return Date:</label>
+                                    <input type="date" id="return_date" name="return_date" required>
+                                    <button style="margin-top:10px; type=" submit" name="borrow">Borrow</button>
+                                </form>
                                 <div class="share">
                                     <button class="share-btn">
                                         <ion-icon name="share-outline"></ion-icon>
                                     </button>
                                     <ul class="popup">
                                         <li>
-                                            <a href="#" style="color: rgb(79, 153, 213)"><i class="bx bxl-twitter"></i></a>
+                                            <a href="#" style="color: rgb(79, 153, 213)"><i
+                                                    class="bx bxl-twitter"></i></a>
                                         </li>
                                         <li>
-                                            <a href="#" style="color: rgb(34, 173, 34)"><i class="bx bxl-whatsapp"></i></a>
+                                            <a href="#" style="color: rgb(34, 173, 34)"><i
+                                                    class="bx bxl-whatsapp"></i></a>
                                         </li>
                                     </ul>
                                 </div>
@@ -236,17 +262,24 @@ if (isset($_GET['logout'])) {
                         <div class="card-footer">
                             <p>category</p>
                             <div class="btn-group">
-                                <button>Borrow</button>
+                                <form method="post" action="borrowbook.php">
+                                    <input type="hidden" name="book_id" value="5">
+                                    <label for="return_date">Return Date:</label>
+                                    <input type="date" id="return_date" name="return_date" required>
+                                    <button style="margin-top:10px; type=" submit" name="borrow">Borrow</button>
+                                </form>
                                 <div class="share">
                                     <button class="share-btn">
                                         <ion-icon name="share-outline"></ion-icon>
                                     </button>
                                     <ul class="popup">
                                         <li>
-                                            <a href="#" style="color: rgb(79, 153, 213)"><i class="bx bxl-twitter"></i></a>
+                                            <a href="#" style="color: rgb(79, 153, 213)"><i
+                                                    class="bx bxl-twitter"></i></a>
                                         </li>
                                         <li>
-                                            <a href="#" style="color: rgb(34, 173, 34)"><i class="bx bxl-whatsapp"></i></a>
+                                            <a href="#" style="color: rgb(34, 173, 34)"><i
+                                                    class="bx bxl-whatsapp"></i></a>
                                         </li>
                                     </ul>
                                 </div>
@@ -264,24 +297,31 @@ if (isset($_GET['logout'])) {
                         <div class="card-footer">
                             <p>category</p>
                             <div class="btn-group">
-                                <button>Borrow</button>
+                                <form method="post" action="borrowbook.php">
+                                    <input type="hidden" name="book_id" value="6">
+                                    <label for="return_date">Return Date:</label>
+                                    <input type="date" id="return_date" name="return_date" required>
+                                    <button style="margin-top:10px; type=" submit" name="borrow">Borrow</button>
+                                </form>
                                 <div class="share">
                                     <button class="share-btn">
                                         <ion-icon name="share-outline"></ion-icon>
                                     </button>
                                     <ul class="popup">
                                         <li>
-                                            <a href="#" style="color: rgb(79, 153, 213)"><i class="bx bxl-twitter"></i></a>
+                                            <a href="#" style="color: rgb(79, 153, 213)"><i
+                                                    class="bx bxl-twitter"></i></a>
                                         </li>
                                         <li>
-                                            <a href="#" style="color: rgb(34, 173, 34)"><i class="bx bxl-whatsapp"></i></a>
+                                            <a href="#" style="color: rgb(34, 173, 34)"><i
+                                                    class="bx bxl-whatsapp"></i></a>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
+
 
 
 
