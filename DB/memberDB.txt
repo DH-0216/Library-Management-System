@@ -1,13 +1,44 @@
-CREATE TABLE Members
-(
-member_id INT PRIMARY KEY AUTO_INCREMENT,
-first_name VARCHAR(255) NOT NULL,
-last_name VARCHAR(255) NOT NULL,
-nic_number VARCHAR(12) NOT NULL UNIQUE,
-address TEXT NOT NULL,
-email VARCHAR(255) NOT NULL UNIQUE,
-contact_number VARCHAR(20) NOT NULL,
-password VARCHAR(255) NOT NULL,
-birthday DATE NOT NULL,
-membership_date DATE NOT NULL DEFAULT CURDATE()
+CREATE TABLE members (
+    member_id INT PRIMARY KEY AUTO_INCREMENT,
+    first_name VARCHAR(255),
+    last_name VARCHAR(255),
+    nic_number VARCHAR(255),
+    address TEXT,
+    email VARCHAR(255),
+    contact_number VARCHAR(50),
+    password VARCHAR(255),
+    birthday DATE
 );
+
+CREATE TABLE books (
+    book_id INT PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(255),
+    author VARCHAR(255),
+    category VARCHAR(255),
+    available_copies INT
+);
+
+
+CREATE TABLE borrow_records (
+    record_id INT PRIMARY KEY AUTO_INCREMENT,
+    nic_number VARCHAR(12) NOT NULL,
+    book_id INT NOT NULL,
+    borrow_date DATE,
+    return_date DATE,
+    FOREIGN KEY (nic_number) REFERENCES members(nic_number) 
+        ON DELETE CASCADE 
+        ON UPDATE CASCADE,
+    FOREIGN KEY (book_id) REFERENCES books(book_id) 
+        ON DELETE CASCADE 
+        ON UPDATE CASCADE
+);
+
+
+INSERT INTO books (book_id, title, author, category, available_copies)
+VALUES
+(1, 'Game of Thrones', 'George R. R. Martin', 'novel', 2),
+(2, 'Lord of the Rings', 'J.R.R. Tolkien', 'novel', 1),
+(3, 'Harry Potter', 'JK Rowling', 'novel', 3),
+(4, 'ONYX STORM', 'Rebecca Yarros', 'novel', 3),
+(5, 'The Games God Plays', 'Abigail Owen', 'novel', 2),
+(6, 'Don Quixote', 'Miguel de Cervantes', 'novel', 3);
